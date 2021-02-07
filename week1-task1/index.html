@@ -7,7 +7,7 @@
 </head>
 <body>
     <h3>Select The timezone:</h3>
-    <form action="">
+    <form action="#">
         <div>
             <input type="radio" id="eastern" name="time_zone" value="eastern" checked>
             <label for="eastern">Eastern Standard Time</label>
@@ -35,13 +35,28 @@
         </div>
         <br>
         <div>
-            <button type="submit" value="submit"> submit</button>
+            <button id= "submitButton" type="submit" value="submit"onclick="ValidateForm()"> submit</button>
         </div>            
     </form>
-    <div id="timezone-display">
-        <p>timezone</p>
+    <div id="result">
+        
     </div>
-
+<script type="text/javascript">
+        var timeZone='';
+        function ValidateForm(){
+            //the content of your function will go here
+            var radioButtons = document.getElementsByName("time_zone");
+            console.log(radioButtons);
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked == true){
+                    //act ions go here
+                    timeZone = radioButtons[i].value;
+                    document.getElementById("result").innerHTML = timeZone;
+                    break;  
+                }
+            }
+        }
+</script>
 
 </body>
 </html>
