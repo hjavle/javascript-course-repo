@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Timezone</title>
+</head>
+<body>
+    <form>
+        <div class= "timezone">
+            <h3>Select The timezone:</h3>        
+                <input type="radio" id="est" name="time_zone" value="est"checked>
+                <label for="est">Eastern Standard Time</label><br>
+                <input type="radio" id="cst" name="time_zone" value="cst">
+                <label for="cst">Cental Standard Time</label><br>
+                <input type="radio" id="mst" name="time_zone" value="mst">
+                <label for="mst">Mountain Standard Time</label><br>
+                <input type="radio" id="pst" name="time_zone" value="pst">
+                <label for="pst">Pacific Standard Time</label><br>
+                <input type="radio" id="ast" name="time_zone" value="ast">
+                <label for="ast">Alaska Standard Time</label><br>
+                <input type="radio" id="hst" name="time_zone" value="hst">
+                <label for="hst">Hawaii-Aleutian Standard Time</label><br> 
+                <br>     
+                <button type="submit" value="submit"onclick="ValidateForm()"> Submit</button>   
+                <div id="result"></div>                                   
+        </div>
+    </form>
+    <div id="showtime"></div>
+<script type="text/javascript"> 
+    var offset = 0;          
+        function ValidateForm(){
+            var radioButtons = document.getElementsByName("time_zone");
+            var timeZone=radioButtons[0].value;
+            //the content of your function will go here           
+            console.log(radioButtons);
+            for (var i = 0; i < radioButtons.length; i++) {
+                if (radioButtons[i].checked == true){
+                    //act ions go here
+                    timeZone = radioButtons[i].value;
+                    document.getElementById("result").innerHTML= timeZone;
+                    break;  
+                }
+            }
+            document.getElementById("result").innerText = timeZone;               
+            event.preventDefault();
+            if (timeZone = "est"){
+                offset = 0;
+            }else if (timeZone = "cst"){
+                offset = 1;
+            }else if (timeZone = "mst"){
+                offset = 2;
+            }else if (timeZone = "pst"){
+                offset = 3;
+            }else if (timeZone = "ast"){
+                offset = 4;
+            }else if (timeZone = "hst"){
+                offset = 5;
+            }
+
+
+            displayTime();
+
+        }
+
+        function displayTime(){
+            var myDate = new Date();
+            console.log(myDate);
+            var hour = myDate.getHours() - offset;
+            var minute = myDate.getMinutes();
+            var second = myDate.getSeconds();
+            var ampm = "AM";
+            var time = hour + ":" + minute + ":" + second + ampm;
+            setTimeout(1000);
+            document.getElementById("showtime").innerText = time;   
+            event.preventDefault(); 
+        }
+</script>
+
+</body>
+</html>
