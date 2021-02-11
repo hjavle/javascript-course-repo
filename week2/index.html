@@ -23,11 +23,16 @@
                 <input type="radio" id="hst" name="time_zone" value="hst">
                 <label for="hst">Hawaii-Aleutian Standard Time</label><br> 
                 <br>     
-                <button type="submit" value="submit"onclick="ValidateForm()"> Submit</button>   
+                <button type="submit" value="submit"onclick="ValidateForm()"> Submit</button> 
+                <br><br>  
                 <div id="result"></div>                                   
         </div>
     </form>
-    <div id="showtime"></div>
+    <br>
+    <div class="clock" id="clock"></div>
+    <p id="showtime"></p>
+
+
 <script type="text/javascript"> 
     var offset = 0;          
         function ValidateForm(){
@@ -58,8 +63,6 @@
             }else if (timeZone = "hst"){
                 offset = 5;
             }
-
-
             displayTime();
 
         }
