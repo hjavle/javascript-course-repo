@@ -29,8 +29,9 @@
         </div>
     </form>
     <br>
-    <div class="clock" id="clock"></div>
+    <div class="clock" id="clock">
     <p id="showtime"></p>
+</div>
 
 
 <script type="text/javascript"> 
@@ -50,18 +51,18 @@
             }
             document.getElementById("result").innerText = timeZone;               
             event.preventDefault();
-            if (timeZone = "est"){
+            if (timeZone == "est"){
                 offset = 0;
-            }else if (timeZone = "cst"){
+            }else if (timeZone == "cst"){
                 offset = 1;
-            }else if (timeZone = "mst"){
-                offset = 2;
-            }else if (timeZone = "pst"){
-                offset = 3;
-            }else if (timeZone = "ast"){
-                offset = 4;
-            }else if (timeZone = "hst"){
-                offset = 5;
+            }else if (timeZone == "mst"){
+                offset =  2;
+            }else if (timeZone == "pst"){
+                offset =  3;
+            }else if (timeZone == "ast"){
+                offset =  4;
+            }else if (timeZone == "hst"){
+                offset =  5;
             }
             displayTime();
 
@@ -74,7 +75,7 @@
             var minute = myDate.getMinutes();
             var second = myDate.getSeconds();
             var ampm = "AM";
-            var time = hour + ":" + minute + ":" + second + ampm;
+            var time = hour + ":" + minute + ":" + second + "  " + ampm;
             setTimeout(1000);
             document.getElementById("showtime").innerText = time;   
             event.preventDefault(); 
