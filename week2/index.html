@@ -38,7 +38,8 @@
     var offset = 0;          
         function ValidateForm(){
             var radioButtons = document.getElementsByName("time_zone");
-            var timeZone=radioButtons[0].value;
+            var timeZone=radioButtons[0].value; 
+            console.log(timeZone);         
             //the content of your function will go here           
             console.log(radioButtons);
             for (var i = 0; i < radioButtons.length; i++) {
@@ -75,8 +76,18 @@
             var minute = myDate.getMinutes();
             var second = myDate.getSeconds();
             var ampm = "AM";
+
+            // Display the 12 hr clock
+            if (hour == 0) {
+                hour = hour - 12;
+            }
+            if (hour > 12){
+                hour = hour - 12;
+                ampm = "PM";
+            }
             var time = hour + ":" + minute + ":" + second + "  " + ampm;
-            setTimeout(1000);
+            //this makes sure the time is updated every second
+            setTimeout(displayTime,1000);
             document.getElementById("showtime").innerText = time;   
             event.preventDefault(); 
         }
