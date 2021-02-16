@@ -8,7 +8,7 @@ body{
     font-family: "Trebuchet MS", Verdana, sans-serif;
     
 }
-/*.clock{
+/*#showtime{
     width: 500px;
     height: 200px;
     display: flex;
@@ -26,6 +26,33 @@ body{
                 0 0 0 4px rgba(255, 255, 255, 1);
 
 } */
+.clock{
+    height: 300px;
+    width:300px;
+    margin-top: 15vh;
+    margin-left: 15vh;
+    background-color: white;
+    border-radius: 50%;
+    border: solid;
+    border-color: black;
+    border-width: 1vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1),
+                0 20px 20px rgba(0, 0, 0, .1),
+                0 0 0 4px rgba(255, 255, 255, 1);
+    position: relative;
+}
+.clock::after{
+    position: absolute;
+    content:'';
+    height: 20px;
+    width:20px;
+    background-color:black;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    
+}
 .timezone{
     margin-top: 10vw;
     font-family: "Trebuchet MS", Verdana, sans-serif;
