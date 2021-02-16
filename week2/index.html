@@ -10,7 +10,7 @@
     <form>
         <div class= "timezone">
             <h3>Select The timezone:</h3>        
-                <input type="radio" id="est" name="time_zone" value="est"checked>
+                <input type="radio" id="est" name="time_zone" value="est" checked>
                 <label for="est">Eastern Standard Time</label><br>
                 <input type="radio" id="cst" name="time_zone" value="cst">
                 <label for="cst">Cental Standard Time</label><br>
@@ -23,35 +23,36 @@
                 <input type="radio" id="hst" name="time_zone" value="hst">
                 <label for="hst">Hawaii-Aleutian Standard Time</label><br> 
                 <br>     
-                <button class ="submit_button" type="submit" value="submit"onclick="ValidateForm()"> Submit</button> 
-                <br><br>  
-                <div id="result"></div>                                   
+                <button class ="submit_button" type="button" value="submit" onclick="ValidateForm()"> Submit</button> 
+                <br><br>                                     
         </div>
     </form>
     <br>
-    <div class="clock" id="clock">
+<div class="clock" id="clock">
     <p id="showtime"></p>
 </div>
 
 
 <script type="text/javascript"> 
-    var offset = 0;          
+
+    var offset = 0;                 
         function ValidateForm(){
+            console.log(event);
             var radioButtons = document.getElementsByName("time_zone");
             var timeZone=radioButtons[0].value; 
             console.log(timeZone);         
             //the content of your function will go here           
             console.log(radioButtons);
-            for (var i = 0; i < radioButtons.length; i++) {
-                if (radioButtons[i].checked == true){
+            for (var i = 0; i < radioButtons.length; i++) 
+            {
+                if (radioButtons[i].checked == true)
+                {
                     //act ions go here
                     timeZone = radioButtons[i].value;
-                    document.getElementById("result").innerHTML= timeZone;
+                   // document.getElementById("result").innerHTML= timeZone;
                     break;  
                 }
             }
-            document.getElementById("result").innerText = timeZone;               
-            event.preventDefault();
             if (timeZone == "est"){
                 offset = 0;
             }else if (timeZone == "cst"){
@@ -66,7 +67,6 @@
                 offset =  5;
             }
             displayTime();
-
         }
 
         function displayTime(){
@@ -79,19 +79,31 @@
 
             // Display the 12 hr clock
             if (hour == 0) {
-                hour = hour - 12;
+                hour = 12;
             }
             if (hour > 12){
                 hour = hour - 12;
                 ampm = "PM";
             }
+            if ( hour < 10)
+            {
+                hour = "0" + hour;
+            }
+            if ( minute < 10)
+            {
+                minute = "0" + minute;
+            }
+            if ( second < 10)
+            {
+                second = "0" + second;
+            }
+            //concatenate the time into a single string
             var time = hour + ":" + minute + ":" + second + "  " + ampm;
             //this makes sure the time is updated every second
-            setTimeout(displayTime,1000);
-            document.getElementById("showtime").innerText = time;   
-            event.preventDefault(); 
+            document.getElementById("showtime").innerText = time;  
+            setTimeout(displayTime,1000); 
         }
+        displayTime();
 </script>
-
 </body>
 </html>
