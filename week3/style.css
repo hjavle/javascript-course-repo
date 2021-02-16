@@ -63,10 +63,6 @@ body{
     font-size: 3vh;
     --rotation:0;
     transform: rotate(var(--rotation));
-    -webkit-transform: rotate(var(--rotation));
-    -moz-transform: rotate(var(--rotation));
-    -ms-transform: rotate(var(--rotation));
-    -o-transform: rotate(var(--rotation));
 }
 .clock .number1 { --rotation: 30deg; }
 .clock .number2 { --rotation: 60deg; }
@@ -81,6 +77,57 @@ body{
 .clock .number11 { --rotation: 330deg; }
 .clock .number12 { --rotation: 360deg; }
 
+.clock .hand {
+    position: absolute;
+    bottom:50%;
+    left: 50%;
+    height: 40%;
+    width: 5%;
+    background-color: black;
+    transform: translate(-50%, 0);
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+.clock .hand.hour{
+    position: absolute;
+    bottom:50%;
+    left: 50%;
+    height: 30%;
+    width: 6%;
+    background-color:rgb(173, 172, 172);
+    transform: translate(-50%, 0);
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    z-index: 10;
+    
+}
+.clock .hand.minute{
+    position: absolute;
+    bottom:50%;
+    left: 50%;
+    height: 40%;
+    width: 5%;
+    background-color: black;
+    transform: translate(-50%, 0);
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    z-index: 11;
+}
+.clock .hand.second{
+    position: absolute;
+    bottom:50%;
+    left: 50%;
+    height: 45%;
+    width: 2%;
+    background-color: red;
+    transform: translate(-50%, 0);
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+    z-index: 12;
+}
+.clock::after{
+    z-index: 100;
+}
 .timezone{
     margin-top: 10vw;
     font-family: "Trebuchet MS", Verdana, sans-serif;
