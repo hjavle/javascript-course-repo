@@ -7,8 +7,21 @@
     const minuteHand = document.querySelector('[data-minute-hand]')
     const secondHand = document.querySelector('[data-second-hand]')
     
+    function setDigital() {
+        var digital = document.getElementById("digital clock");
+        var analog = document.getElementById("analog clock");
+        analog.style.display = "none";
+        digital.style.display = "flex";
+    }
     
-    
+    function setAnalog() {
+        var analog = document.getElementById("analog clock");
+        var digital = document.getElementById("digital clock");
+        analog.style.display = "flex";
+        digital.style.display = "none";
+    }
+    setDigital();
+    setAnalog();
     function ValidateForm(){       
         var radioButtons = document.getElementsByName("time_zone");
         var timeZone=radioButtons[0].value; 
@@ -94,6 +107,9 @@
     function setRotation(element, rotationRatio){
         element.style.setProperty(`--rotation`, rotationRatio * 360);
     }
+
+
     showTime();
     displayTime();
+
 

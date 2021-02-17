@@ -28,35 +28,35 @@
                 <br><br>                                     
         </div>
     </form>
-        <div class ="view">
-            <input type="radio" id="digital" name="view" value="digital" checked>
-                <label for="digita">Digital</label><br>
-                <input type="radio" id="analog" name="view" value="analog">
-                <label for="analog">Analog</label><br>
-        </div>
+        
     <form>
-
+        <div class ="view">
+            <input type="radio" id="digital" name="view" value="digital" onclick="setDigital()" >
+            <label for="digita">Digital</label><br>
+            <input type="radio" id="analog" name="view" value="analog"onclick= "setAnalog()"checked >
+            <label for="analog">Analog</label><br>
+        </div>
     </form>
     <br>
-<div class="clock" id="clock">
-    <div class="number number1">1</div>
-    <div class="number number2">2</div>
-    <div class="number number3">3</div>
-    <div class="number number4">4</div>
-    <div class="number number5">5</div>
-    <div class="number number6">6</div>
-    <div class="number number7">7</div>
-    <div class="number number8">8</div>
-    <div class="number number9">9</div>
-    <div class="number number10">10</div>
-    <div class="number number11">11</div>
-    <div class="number number12">12</div>
-    ​<div class="hand hour" data-hour-hand></div>
-    ​<div class="hand minute" data-minute-hand></div>
-    ​<div class="hand second" data-second-hand></div>
-</div>
-<div class="digital" id="digital clock">
-<p id="showtime"></p></div>
+    <div class="clock" id="analog clock">
+        <div class="number number1">1</div>
+        <div class="number number2">2</div>
+        <div class="number number3">3</div>
+        <div class="number number4">4</div>
+        <div class="number number5">5</div>
+        <div class="number number6">6</div>
+        <div class="number number7">7</div>
+        <div class="number number8">8</div>
+        <div class="number number9">9</div>
+        <div class="number number10">10</div>
+        <div class="number number11">11</div>
+        <div class="number number12">12</div>
+        ​<div class="hand hour" data-hour-hand></div>
+        ​<div class="hand minute" data-minute-hand></div>
+        ​<div class="hand second" data-second-hand></div>
+    </div>
+    <div class="digital" id="digital clock"></div>
+
 <script type="text/javascript"></script>
 </body>
 </html>
