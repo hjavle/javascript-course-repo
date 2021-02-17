@@ -1,7 +1,15 @@
 
-    var offset = 0;                 
-    function ValidateForm(){
-        console.log(event);
+    var offset = 0;   
+
+    setInterval(showTime, 1000);
+
+    const hourHand = document.querySelector('[data-hour-hand]')
+    const minuteHand = document.querySelector('[data-minute-hand]')
+    const secondHand = document.querySelector('[data-second-hand]')
+    
+    
+    
+    function ValidateForm(){       
         var radioButtons = document.getElementsByName("time_zone");
         var timeZone=radioButtons[0].value; 
         console.log(timeZone);         
@@ -30,7 +38,8 @@
         }else if (timeZone == "hst"){
             offset =  5;
         }
-        displayTime();
+      //  displayTime();
+        showTime();
     }
 
     function displayTime(){
@@ -68,4 +77,21 @@
       //  document.getElementById("clock").innerText = time;  
         setTimeout(displayTime,1000); 
     }
-    displayTime();
+   // displayTime();
+
+    function showTime(){
+        const day = new Date ();
+        const secondsRatio = day.getSeconds()/60;
+        const minutesRatio = (day.getMinutes() + secondsRatio) /60;
+        const hoursRatio = (day.getHours() + minutesRatio + offset) / 12; 
+
+        setRotation(secondHand, secondsRatio);
+        setRotation(minuteHand, minutesRatio);
+        setRotation(hourHand, hoursRatio);
+
+    }
+    function setRotation(element, rotationRatio){
+        element.style.setProperty(`--rotation`, rotationRatio * 360);
+    }
+    showTime();
+
