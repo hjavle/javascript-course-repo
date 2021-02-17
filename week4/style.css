@@ -8,7 +8,7 @@ body{
     font-family: "Trebuchet MS", Verdana, sans-serif;
     
 }
-#showtime{
+/*#showtime{
     width: 500px;
     height: 200px;
     display: flex;
@@ -25,7 +25,7 @@ body{
                 0 20px 20px rgba(0, 0, 0, .1),
                 0 0 0 4px rgba(255, 255, 255, 1);
 
-} 
+} */
 .clock{
     height: 300px;
     width:300px;
@@ -94,15 +94,15 @@ body{
 }
     
 .clock .hand.hour{
-    width: 10px;
-	height: 35%;
+    width: 7px;
+	height: 30%;
     background-color: black;
     z-index: 10;
     
 }
 .clock .hand.minute{
     width: 7px;
-	height: 40%;
+	height: 43%;
     background-color: black;
     z-index: 11;
 }
@@ -115,10 +115,28 @@ body{
 .clock::after{
     z-index: 100;
 }
+.digital {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    background-color:black;
+    color:white;
+    border:solid;
+    border-width: 4vh;
+    border-color: gray;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15vh;
+    margin-left: 10vh;
+    font-size: 6vh;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1),
+                0 20px 20px rgba(0, 0, 0, .1),
+                0 0 0 4px rgba(255, 255, 255, 1);
+}
 .timezone{
-    margin-top: 10vw;
+    margin-top: 6vw;
     font-family: "Trebuchet MS", Verdana, sans-serif;
-    font-size: 3vh;
+    font-size: 2vh;
     color: whitesmoke;
 }
 .submit_button{
