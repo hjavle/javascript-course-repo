@@ -1,11 +1,12 @@
 
     var offset = 0;   
-
+   
     setInterval(showTime, 1000);
 
     const hourHand = document.querySelector('[data-hour-hand]')
     const minuteHand = document.querySelector('[data-minute-hand]')
     const secondHand = document.querySelector('[data-second-hand]')
+
     
     function setDigital() {
         var digital = document.getElementById("digital clock");
@@ -22,6 +23,8 @@
     }
     setDigital();
     setAnalog();
+
+   
     function ValidateForm(){       
         var radioButtons = document.getElementsByName("time_zone");
         var timeZone=radioButtons[0].value; 
